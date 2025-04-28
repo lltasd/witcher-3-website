@@ -51,27 +51,27 @@ const Header = ({ scrollPosition, scrollToSection }) => {
 
     const handleNavClick = (e, sectionId) => {
         e.preventDefault();
-        setMenuOpen(false); // Закрываем меню на мобилке
+        setMenuOpen(false);
         scrollToSection(sectionId);
     };
 
     return (
-        <header id="header" className={`header ${isScrolled ? 'scrolled' : ''}`}>
-            <div className="header-container">
-                <div className="mobile-toggle" onClick={toggleMenu}>
+        <header id="header" className={`hdr_f4sd3 ${isScrolled ? 'scr_4ss2' : ''}`}>
+            <div className="hdr_ctn_29fd">
+                <div className="mob_tgl_x8ad" onClick={toggleMenu}>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
 
-                <nav className="main-nav">
-                    <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-                        <li className="dropdown" ref={gamesDropdownRef}>
-                            <Link to="#" className="nav-link" onClick={toggleGamesDropdown}>
+                <nav className="mn_nv_22sk">
+                    <ul className={`nv_lnk_0d2s ${menuOpen ? 'actv_s5w1' : ''}`}>
+                        <li className="drp_dwn_3r4f" ref={gamesDropdownRef}>
+                            <Link to="#" className="nv_lnk_it5e" onClick={toggleGamesDropdown}>
                                 GAMES
-                                <span className={`dropdown-arrow ${gamesDropdownOpen ? 'rotated' : ''}`}>▼</span>
+                                <span className={`drp_arw_q1wd ${gamesDropdownOpen ? 'rtd_0dd0' : ''}`}>▼</span>
                             </Link>
-                            <div className={`dropdown-menu custom-dropdown ${gamesDropdownOpen ? 'visible' : ''}`}>
+                            <div className={`drp_mn_u9v1 cstm_drp_h6x2 ${gamesDropdownOpen ? 'vis_7b1e' : ''}`}>
                                 <Link to="#">Thronebreaker: The Witcher Tales</Link>
                                 <Link to="#">GWENT: The Witcher Card Game</Link>
                                 <Link to="#">The Witcher 4</Link>
@@ -83,55 +83,48 @@ const Header = ({ scrollPosition, scrollToSection }) => {
                         </li>
 
                         <li>
-                            <Link to="#" className="nav-link" onClick={(e) => handleNavClick(e, 'netflixSection')}>
+                            <Link to="#" className="nv_lnk_it5e" onClick={(e) => handleNavClick(e, 'netflixSection')}>
                                 NETFLIX
                             </Link>
                         </li>
 
                         <li>
-                            <Link to="/witcher-website" className="nav-link" onClick={() => setMenuOpen(false)}>
+                            <Link to="/witcher-website" className="nv_lnk_it5e" onClick={() => setMenuOpen(false)}>
                                 REDKIT
                             </Link>
                         </li>
 
-
                         <li>
-                            <Link to="#" className="nav-link" onClick={(e) => handleNavClick(e, 'openworld')}>
+                            <Link to="#" className="nv_lnk_it5e" onClick={(e) => handleNavClick(e, 'openworld')}>
                                 OPEN WORLD
                             </Link>
                         </li>
 
-                        <li className="dropdown" ref={communityDropdownRef}>
-                            <Link to="#" className="nav-link" onClick={toggleCommunityDropdown}>
+                        <li className="drp_dwn_3r4f" ref={communityDropdownRef}>
+                            <Link to="#" className="nv_lnk_it5e" onClick={toggleCommunityDropdown}>
                                 COMMUNITY
-                                <span className={`dropdown-arrow ${communityDropdownOpen ? 'rotated' : ''}`}>▼</span>
+                                <span className={`drp_arw_q1wd ${communityDropdownOpen ? 'rtd_0dd0' : ''}`}>▼</span>
                             </Link>
-                            <div className={`dropdown-menu custom-dropdown ${communityDropdownOpen ? 'visible' : ''}`}>
+                            <div className={`drp_mn_u9v1 cstm_drp_h6x2 ${communityDropdownOpen ? 'vis_7b1e' : ''}`}>
                                 <a href="https://forums.cdprojektred.com/index.php?forums/the-witcher-series.22/"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
+                                   target="_blank" rel="noopener noreferrer">
                                     Forums
                                 </a>
-                                <a href="https://www.thewitcher.com/en/my-rewards" target="_blank"
-                                   rel="noopener noreferrer">
+                                <a href="https://www.thewitcher.com/en/my-rewards" target="_blank" rel="noopener noreferrer">
                                     My Rewards
                                 </a>
                             </div>
                         </li>
 
                         <li>
-                            <Link to="#" className="nav-link" onClick={(e) => handleNavClick(e, 'media')}>
+                            <Link to="#" className="nv_lnk_it5e" onClick={(e) => handleNavClick(e, 'media')}>
                                 MEDIA
                             </Link>
                         </li>
                     </ul>
                 </nav>
 
-                <Link
-                    to="#"
-                    className="buy-now-button"
-                    onClick={(e) => handleNavClick(e, 'header')}
-                >
+                <Link to="#" className="by_nw_btn_44sa" onClick={(e) => handleNavClick(e, 'header')}>
                     BUY NOW
                 </Link>
             </div>
