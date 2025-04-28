@@ -9,7 +9,7 @@ const AppRoutes = () => {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/game' element={<GameSection />} />
-            <Route path='/witch' element={<WitcherWebsite />} />
+            <Route path='/witcher-3-website' element={<WitcherWebsite />} /> {/* Обновленный путь */}
         </Routes>
     );
 }

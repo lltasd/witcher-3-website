@@ -253,8 +253,9 @@
 .load-more-container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    transition: opacity 0.5s ease-in-out;
+    margin: 40px 0;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .load-more-container.bounce-in {
@@ -280,7 +281,7 @@
     padding: 12px 40px;
     background-color: transparent;
     color: #333;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     font-size: 16px;
     text-transform: uppercase;
     cursor: pointer;
