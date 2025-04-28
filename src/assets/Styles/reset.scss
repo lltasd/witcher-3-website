@@ -1,0 +1,182 @@
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков с классом
+ */
+ul.class-name,
+ol.class-name {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам с классом
+ */
+body,
+blockquote.class-name,
+figure.class-name {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам с классом
+ */
+h1.class-name,
+h2.class-name,
+h3.class-name,
+h4.class-name,
+h5.class-name,
+h6.class-name,
+p.class-name,
+ul.class-name,
+ol.class-name,
+dl.class-name {
+  margin-block: 0;
+}
+
+dd.class-name {
+  margin-left: 0;
+}
+
+fieldset.class-name {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку с классом
+ */
+ul.class-name {
+  list-style: none;
+}
+
+address.class-name {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без класса,
+  который расположен не последним среди своих соседних элементов
+ */
+p:not(.class-name):not(:last-child) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  height: 100%;
+  scrollbar-gutter: stable;
+}
+
+/**
+  Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a.class-name {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+[fill]:not(
+  [fill="none"],
+  [fill^="url"]
+) {
+  fill: currentColor;
+}
+
+/**
+  Приводим к единому цвету svg-элементы для stroke
+ */
+[stroke]:not(
+  [stroke="none"],
+  [stroke^="url"]
+) {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+table {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

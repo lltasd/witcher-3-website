@@ -1,0 +1,235 @@
+.scroll-indicator-container {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.scroll-dots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.scroll-menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.scroll-dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background-color: transparent;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-dot.active {
+    background-color: white;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.scroll-menu-label {
+    position: absolute;
+    right: 28px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-transform: none;
+    white-space: nowrap;
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    transform: translateX(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator-wrapper {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 15px;
+    position: relative;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.scroll-indicator-wrapper:before,
+.scroll-indicator-wrapper:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 0;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.scroll-indicator-wrapper:before {
+    top: -25px;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-indicator-wrapper:after {
+    bottom: -25px;
+    clip-path: polygon(50% 100%, 100% 0%, 0% 0%);
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+
+.scroll-indicator-wrapper:hover,
+.scroll-indicator-wrapper:hover:before,
+.scroll-indicator-wrapper:hover:after {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-indicator-wrapper:hover .scroll-menu-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.scroll-dot.Header.active { background-color: #ff7b00; border-color: #ff7b00; }
+.scroll-dot.EnhancedSection.active { background-color: #ffffff; border-color: #ffffff; }
+.scroll-dot.NetflixSection.active { background-color: #2a2a2a; border-color: #363636; }
+.scroll-dot.section-story.active { background-color: #9c27b0; border-color: #9c27b0; }
+.scroll-dot.section-openworld.active { background-color: #2196f3; border-color: #2196f3; }
+.scroll-dot.section-hunter.active { background-color: #ff5722; border-color: #ff5722; }
+.scroll-dot.section-news.active { background-color: #03a9f4; border-color: #03a9f4; }
+.scroll-dot.section-media.active { background-color: #ffc107; border-color: #ffc107; }
+.scroll-dot.section-backstory.active { background-color: #607d8b; border-color: #607d8b; }
+.scroll-dot.section-community.active { background-color: #8bc34a; border-color: #8bc34a; }
+
+
+.scroll-dot.Header:hover { background-color: #ff7b00; border-color: #ff7b00; }
+.scroll-dot.EnhancedSection:hover { background-color: #a2a2a2; border-color: #ababab; }
+.scroll-dot.NetflixSection:hover { background-color: #2a2a2a; border-color: #363636; }
+.scroll-dot.section-story:hover { background-color: #9c27b0; border-color: #9c27b0; }
+.scroll-dot.section-openworld:hover { background-color: #2196f3; border-color: #2196f3; }
+.scroll-dot.section-hunter:hover { background-color: #ff5722; border-color: #ff5722; }
+.scroll-dot.section-news:hover { background-color: #03a9f4; border-color: #03a9f4; }
+.scroll-dot.section-media:hover { background-color: #ffc107; border-color: #ffc107; }
+.scroll-dot.section-backstory:hover { background-color: #607d8b; border-color: #607d8b; }
+.scroll-dot.section-community:hover { background-color: #8bc34a; border-color: #8bc34a; }
+
+
+.scroll-indicator-wrapper.hover-Header,
+.scroll-indicator-wrapper.hover-Header::before,
+.scroll-indicator-wrapper.hover-Header::after,
+.scroll-indicator-wrapper.hover-section-hunter,
+.scroll-indicator-wrapper.hover-section-hunter::before,
+.scroll-indicator-wrapper.hover-section-hunter::after {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-indicator-wrapper.hover-EnhancedSection,
+.scroll-indicator-wrapper.hover-EnhancedSection::before,
+.scroll-indicator-wrapper.hover-EnhancedSection::after {
+            background-color: rgba(255, 255, 255, 0.63);
+            box-shadow: none;
+}
+.scroll-indicator-wrapper.hover-EnhancedSection .scroll-dot {
+    border-color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-indicator-wrapper.hover-EnhancedSection .scroll-dot.active {
+    background-color: rgba(189, 189, 189, 0.65);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+.scroll-indicator-wrapper.hover-NetflixSection,
+.scroll-indicator-wrapper.hover-NetflixSection::before,
+.scroll-indicator-wrapper.hover-NetflixSection::after {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-indicator-wrapper.hover-section-story,
+.scroll-indicator-wrapper.hover-section-story::before,
+.scroll-indicator-wrapper.hover-section-story::after {
+    background-color: rgba(0, 0, 0, 0.51);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-indicator-wrapper.hover-section-OpenWorld,
+.scroll-indicator-wrapper.hover-section-OpenWorld::before,
+.scroll-indicator-wrapper.hover-section-OpenWorld::after {
+    background-color: rgba(0, 0, 0, 0.47);
+    box-shadow: none;
+}
+
+
+.scroll-indicator-wrapper.hover-section-news,
+.scroll-indicator-wrapper.hover-section-news::before,
+.scroll-indicator-wrapper.hover-section-news::after {
+    background-color: rgba(255, 255, 255, 0.81);
+    box-shadow: none;
+}
+
+
+.scroll-indicator-wrapper.hover-section-news .scroll-dot {
+    border-color: rgba(0, 0, 0, 0.51);
+}
+
+
+.scroll-indicator-wrapper.hover-section-news .scroll-dot.active {
+    background-color: black;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+
+.scroll-indicator-wrapper.hover-section-media,
+.scroll-indicator-wrapper.hover-section-media::before,
+.scroll-indicator-wrapper.hover-section-media::after {
+    background-color: rgba(255, 255, 255, 0.81);
+    box-shadow: none;
+}
+
+.scroll-indicator-wrapper.hover-section-media .scroll-dot {
+    border-color: rgba(0, 0, 0, 0.51);
+}
+
+
+.scroll-indicator-wrapper.hover-section-media .scroll-dot.active {
+    background-color: #694f4f;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+.scroll-indicator-wrapper.hover-section-backstory,
+.scroll-indicator-wrapper.hover-section-backstory::before,
+.scroll-indicator-wrapper.hover-section-backstory::after {
+    background-color: rgba(96, 125, 139, 0.5);
+    box-shadow: none;
+}
+
+.scroll-indicator-wrapper.hover-section-community,
+.scroll-indicator-wrapper.hover-section-community::before,
+.scroll-indicator-wrapper.hover-section-community::after {
+    background-color: black;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+
+
+@media (max-width: 768px) {
+    .scroll-indicator-container {
+        display: none;
+    }
+}

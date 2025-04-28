@@ -1,0 +1,385 @@
+.netflix-section {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.netflix-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../public/i.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.netflix-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.netflix-container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.imba-netflix-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.collaboration-header {
+    max-width: 800px;
+    padding: 0 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.netflix-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.collab-logo {
+    height: 80px;
+    width: auto;
+}
+
+.collaboration-header h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.collaboration-header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+}
+
+.screenshot-gallery {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+
+.screenshot-main,
+.screenshot-side {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 400px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex: 1;
+    min-width: 0;
+}
+
+.screenshot-main {
+    flex: 2;
+}
+
+.main-screenshot,
+.side-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.screenshot-main:hover .main-screenshot,
+.screenshot-side:hover .side-screenshot {
+    transform: scale(1.05);
+}
+
+.captured-on {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.3rem 0.8rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.next-gen-badge {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #e30000;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.fullscreen-hint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.fullscreen-hint span {
+    color: white;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.screenshot-main:hover .fullscreen-hint,
+.screenshot-side:hover .fullscreen-hint {
+    opacity: 1;
+}
+
+.gallery-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nav-arrow {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-arrow span {
+    font-size: 1.5rem;
+}
+
+.fullscreen-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.fullscreen-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.close-fullscreen {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1001;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.close-fullscreen:hover {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.screenshot-main img,
+.screenshot-side img {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+    .collaboration-header h2 {
+        font-size: 3rem;
+    }
+
+    .screenshot-gallery {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .netflix-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 4rem 0;
+    }
+
+    .imba-netflix-content {
+        flex-direction: column;
+    }
+
+    .collaboration-header {
+        max-width: 700px;
+        margin-bottom: 3rem;
+    }
+
+    .collaboration-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .screenshot-gallery {
+        flex-direction: column;
+        max-width: 600px;
+        gap: 1.5rem;
+    }
+
+    .screenshot-main,
+    .screenshot-side {
+        height: 350px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .collaboration-header h2 {
+        font-size: 2rem;
+    }
+
+    .collab-logo {
+        height: 60px;
+    }
+
+    .collaboration-header p {
+        font-size: 1rem;
+    }
+
+    .screenshot-main,
+    .screenshot-side {
+        height: 300px;
+    }
+
+    .nav-arrow {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 576px) {
+    .netflix-container {
+        padding: 0 1rem;
+    }
+
+    .collaboration-header {
+        padding: 0 1rem;
+    }
+
+    .collaboration-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .collab-logo {
+        height: 50px;
+    }
+
+    .screenshot-main,
+    .screenshot-side {
+        height: 250px;
+    }
+
+    .next-gen-badge {
+        font-size: 0.6rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .captured-on {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .nav-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-arrow span {
+        font-size: 1.2rem;
+    }
+
+    .close-fullscreen {
+        font-size: 2.5rem;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .collaboration-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .screenshot-main,
+    .screenshot-side {
+        height: 200px;
+    }
+}

@@ -1,0 +1,8 @@
+@use "reset" as *;
+@use "fonts" as *;
+@use "mixin" as *;
+@use "variables" as *;
+
+html {
+  scroll-behavior: smooth;
+}

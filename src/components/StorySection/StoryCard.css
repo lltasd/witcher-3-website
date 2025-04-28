@@ -1,0 +1,199 @@
+.story-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.5s ease;
+    height: 230px;
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.6) 70%,
+            rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.story-card:hover::before {
+    opacity: 0.4;
+}
+
+.story-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(255, 204, 0, 0.2);
+}
+
+.story-card-image {
+    height: 95%;
+    width: 65%;
+    overflow: hidden;
+}
+
+.story-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.story-card:hover .story-card-image img {
+    transform: scale(1.1);
+}
+
+.story-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    z-index: 2;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.story-card-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    color: #fff;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.story-card-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffcc00;
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.story-card:hover .story-card-title::after {
+    width: 40px;
+}
+
+.story-card-hover-info {
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.story-card:hover .story-card-hover-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-card-hover-info p {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.story-card-view {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.story-card-view::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ffcc00;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover .story-card-view::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.cards-appear .story-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.cards-appear .story-card-1 {
+    animation-delay: 0.3s;
+}
+
+.cards-appear .story-card-2 {
+    animation-delay: 0.5s;
+}
+
+.cards-appear .story-card-3 {
+    animation-delay: 0.7s;
+}
+
+.cards-appear .story-card-4 {
+    animation-delay: 0.9s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .story-card {
+        height: 200px;
+    }
+
+    .story-card-title {
+        font-size: 1.4rem;
+    }
+
+    .story-card-hover-info p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .story-card {
+        height: 180px;
+    }
+
+    .story-card-title {
+        font-size: 1.2rem;
+    }
+
+    .story-card-content {
+        padding: 1.2rem;
+    }
+}
