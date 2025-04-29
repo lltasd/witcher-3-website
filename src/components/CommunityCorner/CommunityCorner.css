@@ -4,8 +4,8 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    padding: 70px 50px 50px;
-    font-family: 'Metamorphous', 'Times New Roman', serif; /* Шрифт в стиле средневековья */
+    padding: 30px 50px 50px;
+    font-family: 'Metamorphous', 'Times New Roman', serif;
     background-image: url('/witcher-bg.jpg');
     background-color: rgba(21, 25, 30, 0.85);
     background-blend-mode: overlay;
@@ -16,8 +16,38 @@
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
     color: #d4c8a8;
+    box-sizing: border-box;
 }
 
+
+.community-corner-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+            url('/fog.webp') no-repeat center center,
+            radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.7));
+    background-size: cover;
+    opacity: 0.1;
+    pointer-events: none;
+    animation: fogAnimation 60s infinite linear;
+    z-index: 0;
+}
+
+@keyframes fogAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 20%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
 
 .witcher-medallion {
     position: absolute;
@@ -28,6 +58,7 @@
     height: 120px;
     z-index: 10;
     animation: pulseMedallion 4s infinite alternate;
+    filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.6));
 }
 
 .witcher-medallion img {
@@ -39,15 +70,15 @@
 @keyframes pulseMedallion {
     0% {
         transform: translateX(-50%) scale(1);
-        filter: brightness(1);
+        filter: brightness(1) drop-shadow(0 0 10px rgba(255, 165, 0, 0.5));
     }
     50% {
         transform: translateX(-50%) scale(1.05);
-        filter: brightness(1.2);
+        filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 165, 0, 0.7));
     }
     100% {
         transform: translateX(-50%) scale(1);
-        filter: brightness(1);
+        filter: brightness(1) drop-shadow(0 0 10px rgba(255, 165, 0, 0.5));
     }
 }
 
@@ -57,12 +88,18 @@
     left: 30px;
     width: 150px;
     animation: slideIn 0.7s ease-out;
+    z-index: 10;
 }
 
 .logo {
     width: 100%;
     object-fit: contain;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+    transition: filter 0.3s ease;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
 }
 
 .content-wrapper {
@@ -71,6 +108,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 5;
 }
 
 .community-info {
@@ -84,6 +123,35 @@
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(169, 138, 86, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.community-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.community-info::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    opacity: 0.7;
 }
 
 .community-title {
@@ -95,6 +163,19 @@
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 165, 0, 0.6);
     animation: titleGlow 3s infinite alternate;
+    position: relative;
+    display: inline-block;
+}
+
+
+.community-title::before, .community-title::after {
+    content: "❈";
+    font-size: 28px;
+    vertical-align: middle;
+    color: #a98a56;
+    margin: 0 15px;
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
 }
 
 @keyframes titleGlow {
@@ -105,7 +186,6 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 165, 0, 0.7);
     }
 }
-
 
 .title-divider {
     display: flex;
@@ -122,13 +202,23 @@
 }
 
 .divider-symbol {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     margin: 0 15px;
-    background-image: url('/community-aay@2x.jpg');
+    background-image: url('public/pfb.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    animation: rotateDivider 12s infinite linear;
+}
+
+@keyframes rotateDivider {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .community-description {
@@ -149,13 +239,13 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-
 .projects-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+    position: relative;
 }
 
 .community-projects {
@@ -164,14 +254,29 @@
     justify-content: center;
     width: 90%;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     padding: 20px 10px 50px;
     animation: fadeInUp 1.2s ease-out;
+    transition: transform 0.5s ease-out;
+}
+
+.community-projects.sliding {
+    transition: transform 0.4s ease-out;
+}
+
+.community-projects.slide-left {
+    transform: translateX(-10px);
+    opacity: 0.7;
+}
+
+.community-projects.slide-right {
+    transform: translateX(10px);
+    opacity: 0.7;
 }
 
 .project-card {
-    width: 350px;
-    height: 400px;
+    width: 420px;
+    height: 320px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border-radius: 12px;
     overflow: hidden;
@@ -205,6 +310,41 @@
     opacity: 0.8;
 }
 
+
+.project-status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #d4c8a8;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 5;
+    border: 1px solid #a98a56;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.project-card.active .project-status-badge {
+    background-color: rgba(0, 100, 0, 0.4);
+    color: #e0d5b7;
+    border-color: #2ecc71;
+}
+
+.project-card.upcoming .project-status-badge {
+    background-color: rgba(100, 100, 0, 0.4);
+    color: #e0d5b7;
+    border-color: #f1c40f;
+}
+
+.project-card:hover .project-status-badge {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 .project-badge {
     height: 220px;
     position: relative;
@@ -235,7 +375,6 @@
 .witcher-symbol {
     width: 60px;
     height: 60px;
-    background-image: url('/community-witcher-school-quiz@2x.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -261,14 +400,23 @@
     transition: color 0.3s ease;
 }
 
+.project-card:hover .badge-title {
+    color: #ffe7b0;
+    text-shadow: 0 0 10px rgba(255, 187, 85, 0.5);
+}
+
 .project-description {
     font-size: 16px;
     color: #b8ad95;
     line-height: 1.5;
     margin-bottom: 20px;
     flex-grow: 1;
+    transition: color 0.3s ease;
 }
 
+.project-card:hover .project-description {
+    color: #d4c8a8;
+}
 
 .witcher-button {
     background-color: rgba(169, 138, 86, 0.2);
@@ -311,7 +459,6 @@
     left: 100%;
 }
 
-
 .navigation-arrows {
     position: relative;
     display: flex;
@@ -335,6 +482,7 @@
     justify-content: center;
     transition: all 0.3s ease;
     border-radius: 50%;
+    z-index: 5;
 }
 
 .arrow-button:hover {
@@ -345,10 +493,10 @@
     box-shadow: 0 0 15px rgba(255, 187, 85, 0.4);
 }
 
-
 .pagination-indicator {
     display: flex;
     gap: 8px;
+    align-items: center;
 }
 
 .pagination-dot {
@@ -358,6 +506,7 @@
     background-color: rgba(169, 138, 86, 0.3);
     border: 1px solid rgba(169, 138, 86, 0.6);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .pagination-dot.active {
@@ -366,6 +515,10 @@
     box-shadow: 0 0 8px rgba(255, 187, 85, 0.6);
 }
 
+.pagination-dot:hover:not(.active) {
+    background-color: rgba(169, 138, 86, 0.5);
+    transform: scale(1.1);
+}
 
 @keyframes fadeIn {
     0% {
@@ -398,7 +551,20 @@
     }
 }
 
+/* Добавляем дополнительную анимацию при прокрутке */
+@keyframes floatElement {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
+/* Медиа-запросы для адаптивности */
 @media (max-width: 1200px) {
     .community-projects {
         width: 95%;
@@ -462,6 +628,11 @@
     .title-divider {
         width: 95%;
     }
+
+    .community-title::before, .community-title::after {
+        margin: 0 8px;
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -472,6 +643,11 @@
     .community-title {
         font-size: 28px;
         letter-spacing: 2px;
+    }
+
+    .community-title::before, .community-title::after {
+        content: "";
+        margin: 0;
     }
 
     .community-description {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'; // добавил useLocation
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator.jsx';
 import HeroSection from './components/HeroSection.jsx';
@@ -18,8 +18,7 @@ import './App.css';
 
 const App = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
-    const location = useLocation(); // тут получаем путь
-
+    const location = useLocation();
     useEffect(() => {
         const handleScroll = () => {
             setScrollPosition(window.scrollY);
