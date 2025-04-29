@@ -31,7 +31,7 @@ const HeroSection = () => {
                 <div className="hero-content">
                     <div className="headers-logo-container">
                         <img
-                            src="public/tw3.png"
+                            src="/tw3.png"
                             alt="The Witcher 3: Wild Hunt"
                             className="ff-hero-logo"
                         />

@@ -55,7 +55,7 @@ section {
 }
 
 .hero-section {
-    background-image: url('public/header_w3.jpeg');
+    background-image: url('/header_w3.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -65,6 +65,7 @@ section {
     padding: 0 20px;
     text-align: center;
 }
+
 
 .hero-content {
     max-width: 1200px;

@@ -7,12 +7,12 @@ const NetflixSection = () => {
 
                                const slides = [
                            {
-                               main: "public/firstNetflix.jpg",
-                               side: "public/secondNetflix.jpg"
+                               main: "/firstNetflix.jpg",
+                               side: "/secondNetflix.jpg"
                            },
                            {
-                               main: "public/secondNetflix.jpg",
-                               side: "public/firstNetflix.jpg"
+                               main: "/secondNetflix.jpg",
+                               side: "/firstNetflix.jpg"
                            }
                            ];
 
@@ -42,7 +42,7 @@ const NetflixSection = () => {
                                <div className="collaboration-header">
                                <div className="netflix-logo-container">
                                <img
-                               src="../../../public/cdprojectXnetflix.svg"
+                               src="/cdprojectXnetflix.svg"
                                alt="CD Projekt Red × Netflix"
                                className="collab-logo"
                                />
