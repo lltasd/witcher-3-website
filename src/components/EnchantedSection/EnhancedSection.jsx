@@ -16,7 +16,7 @@ const EnhancedSection = () => {
 
             const rect = logoElement.getBoundingClientRect();
             const isLogoVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-            setIsVisible(isLogoVisible); // Ловим видимость секции
+            setIsVisible(isLogoVisible);
 
             if (isLogoVisible) {
                 logoElement.classList.add("visible");
@@ -99,7 +99,7 @@ const EnhancedSection = () => {
 
             <div className="witcher-logo-container" ref={logoRef}>
                 <img
-                    src="../../../public/tw3.png"
+                    src="/tw3.png"
                     alt="The Witcher 3: Wild Hunt"
                     className="logo-small"
                 />

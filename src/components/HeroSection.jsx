@@ -60,7 +60,7 @@ const HeroSection = () => {
                             <iframe
                                 width="100%"
                                 height="100%"
-                                src="/public/4504187177654 - Trim.mp4"
+                                src="/4504187177654.mp4"
                                 title="The Witcher 3 Trailer"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

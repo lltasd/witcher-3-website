@@ -45,8 +45,6 @@ const App = () => {
     return (
         <div className="app">
             <Header scrollPosition={scrollPosition} scrollToSection={scrollToSection} />
-
-            {/* Показываем ScrollIndicator только на главной странице */}
             {location.pathname === '/' && <ScrollIndicator />}
 
             <Routes>
