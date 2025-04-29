@@ -58,19 +58,19 @@ const GameSection = () => {
     const renderStoreSelection = () => {
         const storesByPlatform = {
             pc: [
-                { id: 'gog', name: 'GOG.COM', logo: '/public/gogcom.webp' },
-                { id: 'epic', name: 'Epic Games', logo: '/public/epicg.webp' },
-                { id: 'steam', name: 'Steam', logo: '/public/steam.webp' }
+                { id: 'gog', name: 'GOG.COM', logo: '/gogcom.webp' },
+                { id: 'epic', name: 'Epic Games', logo: '/epicg.webp' },
+                { id: 'steam', name: 'Steam', logo: '/steam.webp' }
             ],
             xbox: [
-                { id: 'microsoft', name: 'Microsoft Store', logo: '/public/mst.webp' }
+                { id: 'microsoft', name: 'Microsoft Store', logo: '/mst.webp' }
             ],
             playstation: [
-                { id: 'ps-store', name: 'PlayStation Store', logo: '/public/pst.webp' }
+                { id: 'ps-store', name: 'PlayStation Store', logo: '/pst.webp' }
             ],
 
             switch: [
-                { id: 'nintendo', name: 'Nintendo eShop', logo: '/public/nint.jpg' }
+                { id: 'nintendo', name: 'Nintendo eShop', logo: '/nint.jpg' }
             ]
         };
 
@@ -104,26 +104,26 @@ const GameSection = () => {
 
                 <div className="content-grid">
                     <div className="content-item main-game">
-                        <img src="/public/orig.webp" alt="Ведьмак 3: Дикая охота" />
+                        <img src="/orig.webp" alt="Ведьмак 3: Дикая охота" />
                         <p>Ведьмак 3: Дикая охота</p>
                     </div>
 
                     <div className="content-item expansion">
-                        <img src="/public/hearts.png" alt="Каменные сердца" />
+                        <img src="/hearts.png" alt="Каменные сердца" />
                         <p>Дополнение «Каменные сердца»</p>
                     </div>
 
                     <div className="content-item expansion">
-                        <img src="/public/blood.jpg" alt="Кровь и вино" />
+                        <img src="/blood.jpg" alt="Кровь и вино" />
                         <p>Дополнение «Кровь и вино»</p>
                     </div>
 
                     <div className="content-item dlc">
                         <div className="dlc-collection">
-                            <img src="/public/16+.jpg" alt="Комплект темерских доспехов" />
-                            <img src="/public/16++.jpg" alt="Снаряжение Школы Волка" />
-                            <img src="/public/16+++.jpg" alt="Пропавшие горняки" />
-                            <img src="/public/166.jpg" alt="Альтернативный облик Йеннифэр" />
+                            <img src="/16+.jpg" alt="Комплект темерских доспехов" />
+                            <img src="/16++.jpg" alt="Снаряжение Школы Волка" />
+                            <img src="/16+++.jpg" alt="Пропавшие горняки" />
+                            <img src="/166.jpg" alt="Альтернативный облик Йеннифэр" />
                         </div>
                         <p>+ 16 DLCs</p>
                     </div>
@@ -144,13 +144,13 @@ const GameSection = () => {
         <div className="game-section">
             <div className="game-left">
                 <img
-                    src="/public/orrig.webp"
+                    src="/orrig.webp"
                     alt="Game Hero"
                     className="hero-image"
                 />
 
                 <img
-                    src="/public/tw3.png"
+                    src="/tw3.png"
                     alt="Legenda"
                     className="legend-image"
                 />

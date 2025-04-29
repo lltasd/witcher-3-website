@@ -135,7 +135,7 @@ const MonsterHunter = () => {
         <section  ref={sectionRef} id="hunter" className="section-monsterhunter">
             <div className="monsterhunter-logo-space">
                 <img
-                    src="../../../public/3050346935_preview_witcher%2520logo.png.png"
+                    src="/3050346935_preview_witcher%2520logo.png.png"
                     alt="CD Projekt Red × Netflix"
                     className="monsterhunter-collab-logo"
                 />

@@ -1,5 +1,4 @@
 :root {
-    /* Enhanced color palette with better contrast and modern feel */
     --primary-dark: #121212;
     --primary-light: #f5f5f5;
     --accent-red: #e63946;
@@ -16,7 +15,7 @@
     --dark-overlay: rgba(18, 18, 18, 0.9);
 }
 
-/* Base styles and layout */
+
 .game-section {
     width: 100%;
     min-height: 100vh;
@@ -27,7 +26,7 @@
     color: var(--primary-light);
 }
 
-/* Left side with hero image */
+
 .game-left {
     flex: 2.3;
     position: relative;
@@ -66,7 +65,7 @@
     filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
 }
 
-/* Right side with controls */
+
 .game-right {
     flex: 1;
     padding: 40px;
@@ -98,7 +97,7 @@
     transform: translateY(-3px);
 }
 
-/* Typography */
+
 .platform-title {
     font-size: 28px;
     font-weight: 800;
@@ -124,7 +123,7 @@
     border-radius: 2px;
 }
 
-/* Platform grid */
+
 .platforms-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -193,7 +192,7 @@
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-/* Platform-specific colors with more distinct hues */
+
 .platform-name.pc {
     color: #ff5252;
 }
@@ -210,7 +209,7 @@
     color: #ff9800;
 }
 
-/* Store selection grid */
+
 .stores-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -281,7 +280,7 @@
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-/* Back button */
+
 .back-button {
     display: flex;
     align-items: center;
@@ -317,7 +316,7 @@
     transform: translateX(-4px);
 }
 
-/* Free update banner */
+
 .free-update-banner {
     width: 100%;
     padding: 18px;
@@ -382,7 +381,7 @@
     letter-spacing: 0.5px;
 }
 
-/* Details button */
+
 .details-button {
     display: flex;
     align-items: center;
@@ -460,7 +459,7 @@
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
-/* Official site button */
+
 .official-site-button {
     display: flex;
     align-items: center;
@@ -506,7 +505,6 @@
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
-/* Game content modal */
 .game-content-modal {
     position: fixed;
     top: 0;

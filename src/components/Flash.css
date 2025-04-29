@@ -15,6 +15,6 @@
 
 #page-flash.hidden {
     opacity: 0;
-    transform: scale(1.05); /* Немного увеличивается при исчезании — эффект вспышки */
+    transform: scale(1.05);
     pointer-events: none;
 }

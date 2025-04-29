@@ -94,12 +94,12 @@ const FooterSection = () => {
                 </div>
 
                 <div className="company-logo">
-                    <img src="/public/logopnnngg.png" alt="CD Projekt Red" className="logo-image" />
+                    <img src="/logopnnngg.png" alt="CD Projekt Red" className="logo-image" />
                 </div>
 
                 <div className="rating-section">
                     <div className="rating-icons">
-                        <img src="/public/18.png" alt="18+ Rating" className="rating-image" />
+                        <img src="/18.png" alt="18+ Rating" className="rating-image" />
                         <div className="additional-ratings">
                             <div className="rating-icon">
                                 <span>@+!#</span>

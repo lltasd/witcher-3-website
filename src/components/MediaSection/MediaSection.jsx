@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './MediaSection.css';
 const videos = [
-    { id: 1, title: 'Geralt & Ciri Trailer', src: '/public/4504187177654 - Trim.mp4', thumbnail: '/geraltand.jpg' },
+    { id: 1, title: 'Geralt & Ciri Trailer', src: '/4504187177654.mp4', thumbnail: '/geraltand.jpg' },
     { id: 2, title: 'Expansion Teaser', src: 'https://www.youtube.com/embed/7sVoDJ_DITs', thumbnail: '/expans.jpg' },
     { id: 3, title: 'Hearts of Stone Trailer', src: 'https://www.youtube.com/embed/xx8kQ4s5hCY', thumbnail: '/gryph.jpg' },
     { id: 4, title: 'Next-Gen Update Trailer', src: 'https://www.youtube.com/embed/c0i88t0Kacs', thumbnail: '/geraltand.jpg' },

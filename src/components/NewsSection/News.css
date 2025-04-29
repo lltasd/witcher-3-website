@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 100vh;
     padding: 20px;
-    background: url('/public/orig.webp') center/cover no-repeat;
+    background: url('/orig.webp') center/cover no-repeat;
     font-family: 'Cinzel', serif;
     position: relative;
     overflow: hidden;
@@ -465,7 +465,7 @@
     }
 }
 
-/* Медиа-запросы */
+
 @media (max-width: 1200px) {
     .news-main {
         flex-direction: column;

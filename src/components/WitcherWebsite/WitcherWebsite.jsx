@@ -96,7 +96,7 @@ function WitcherWebsite() {
                         scrollToSection(heroRef);
                     }}>
                         {scrollY > 100 ? (
-                            <img src="/public/tw3.png" alt="Witcher Logo" className="header-logo" />
+                            <img src="/tw3.png" alt="Witcher Logo" className="header-logo" />
                         ) : (
                             <span className="header-text">ГЛАВНАЯ</span>
                         )}
@@ -171,7 +171,7 @@ function WitcherWebsite() {
                         transform: `scale(${1 + scrollY * 0.0005})`
                     }}
                 >
-                    <source src="/public/6405365303845.mp4" type="video/mp4" />
+                    <source src="/6405365303845.mp4" type="video/mp4" />
                 </video>
 
                 <div className="video-overlay parallax-overlay" style={{
@@ -186,7 +186,7 @@ function WitcherWebsite() {
 
                 <div className="hero-content">
                     <img
-                        src="/public/redkit.webp"
+                        src="/redkit.webp"
                         alt="REDKIT"
                         className="redkit-logo"
                         style={getLogoStyle()}
